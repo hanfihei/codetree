@@ -5,26 +5,32 @@ public class Main {
         int n = sc.nextInt();
         int x = 0;
         int y = 0;
-        int[] dx = new int[]{-1,1,0,0}; //북남동서
-        int[] dy =  new int[]{0,0,1,-1};
+
+
+        int[] dx = {0, 0, 1, -1};//북남동서
+        int[] dy = {1, -1, 0, 0};
+        int dir = 0;
 
         for (int i = 0; i < n; i++) {
             char di = sc.next().charAt(0);
             int d = sc.nextInt();
             
             if(di == 'N'){ //북
-                y += dy[0] + d;
+                dir = 0;
             }
-            else if(di == 'E'){ // 동
-                x += dx[2] + d;
+            else if(di == 'S'){ // 남
+                dir = 1;
 
             }
-            else if(di == 'S'){//남
-                y += dy[1] - d;
+            else if(di == 'E'){//남
+                dir = 2;
             }
             else { // 서
-                x += dx[3] - d;
+                dir = 3;
             }
+
+            x += dx[dir] * d;
+            y += dy[dir] * d;
             
         }
 

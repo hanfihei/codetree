@@ -14,7 +14,7 @@ public class Main {
             arr[i][1] = sc.nextInt();
         }
 
-        for(int i = -1; i<=1001; i++) {
+        for(int i = -100; i<=1001; i++) {
             int sum = 0;
             for(int j = 0; j<n; j++) {
                 if(i<arr[j][0])
